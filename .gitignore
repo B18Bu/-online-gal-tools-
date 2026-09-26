@@ -1,0 +1,24 @@
+# Secrets and local runtime configuration
+.env
+.env.*
+!.env.example
+earth_online_gal_config.json
+
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# PyInstaller and generated binaries
+build/
+outputs/
+*.spec
+*.exe
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

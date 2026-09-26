@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T18:27:14.8765384+08:00",
+  "title": "Design System: 地球online gal工具包",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {"role": "neutral", "displayName": "Night Canvas", "canonical": "#0d1216", "tonalRamp": ["#0d1216", "#151d22", "#202a30", "#2a373d", "#526662", "#a6b8b5", "#d4e1df", "#eef7f5"]},
+      "accent": {"role": "primary", "displayName": "Sea-glass Action", "canonical": "#45d7c1", "tonalRamp": ["#071412", "#123c35", "#207564", "#2ba994", "#45d7c1", "#7be8d8", "#b8f4eb", "#e5fffa"]},
+      "warning": {"role": "secondary", "displayName": "Warm Warning", "canonical": "#f0bf72", "tonalRamp": ["#2a1d0a", "#573b13", "#8d611f", "#bd8635", "#f0bf72", "#f7d69c", "#fbe8c7", "#fff8eb"]},
+      "error": {"role": "tertiary", "displayName": "Recovery Error", "canonical": "#f18377", "tonalRamp": ["#2a1110", "#5a2421", "#913b35", "#c55f56", "#f18377", "#f7ada5", "#fbd2cd", "#fff1ef"]}
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Product Display", "purpose": "Product title only."},
+      "title": {"displayName": "Task Title", "purpose": "Task groups and panel headings."},
+      "body": {"displayName": "Operational Body", "purpose": "Chat readout, controls, statuses, and candidate replies."},
+      "label-mono": {"displayName": "Shortcut Label", "purpose": "Keyboard shortcut and key-entry metadata only."}
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single action that advances from chat context to a fresh suggestion.",
+      "html": "<button class=\"ds-btn-primary\">生成回复</button>",
+      "css": ".ds-btn-primary { background: #2ba994; color: #0d1216; border: 0; border-radius: 0; padding: 9px 18px; font: 700 11px 'Microsoft YaHei UI', sans-serif; } .ds-btn-primary:hover { background: #45d7c1; } .ds-btn-primary:focus-visible { outline: 2px solid #45d7c1; outline-offset: 2px; } .ds-btn-primary:disabled { color: #5a736f; }"
+    },
+    {
+      "name": "Secondary Action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A calibration or cancellation control that supports but does not lead the workflow.",
+      "html": "<button class=\"ds-btn-secondary\">校准区域</button>",
+      "css": ".ds-btn-secondary { background: #202a30; color: #eef7f5; border: 0; border-radius: 0; padding: 9px 18px; font: 400 10px 'Microsoft YaHei UI', sans-serif; } .ds-btn-secondary:hover { background: #2a373d; } .ds-btn-secondary:focus-visible { outline: 2px solid #45d7c1; outline-offset: 2px; }"
+    },
+    {
+      "name": "Relationship Segment",
+      "kind": "chip",
+      "refersTo": "relationship-segment",
+      "description": "Equal-width tone selectors; selection invalidates old candidate content.",
+      "html": "<button class=\"ds-segment ds-segment-active\">暧昧</button>",
+      "css": ".ds-segment { background: #202a30; color: #a6b8b5; border: 0; border-radius: 0; padding: 6px 11px; font: 400 10px 'Microsoft YaHei UI', sans-serif; } .ds-segment-active { background: #2ba994; color: #0d1216; } .ds-segment:focus-visible { outline: 2px solid #45d7c1; outline-offset: 2px; }"
+    },
+    {
+      "name": "Reply Choice",
+      "kind": "custom",
+      "refersTo": "reply-choice",
+      "description": "A current-generation candidate that copies its own text only after the user chooses it.",
+      "html": "<button class=\"ds-reply\">1&nbsp;&nbsp;今晚可以，点击复制</button>",
+      "css": ".ds-reply { width: 100%; text-align: left; background: #151d22; color: #eef7f5; border: 0; border-radius: 0; padding: 8px 14px; font: 400 10px 'Microsoft YaHei UI', sans-serif; } .ds-reply:hover { background: #2a373d; } .ds-reply:focus-visible { outline: 2px solid #45d7c1; outline-offset: 2px; } .ds-reply:disabled { color: #76908c; }"
+    },
+    {
+      "name": "Masked Key Field",
+      "kind": "input",
+      "refersTo": "api-key-field",
+      "description": "An in-memory API key field with masked characters and a clear focus state.",
+      "html": "<input class=\"ds-key\" type=\"password\" placeholder=\"API Key\">",
+      "css": ".ds-key { background: #0f1418; color: #eef7f5; border: 1px solid #37514f; border-radius: 0; padding: 8px 10px; font: 400 10px 'Cascadia Mono', monospace; } .ds-key:focus { outline: 0; border-color: #45d7c1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Reply Desk",
+    "overview": "This is a compact, no-terminal operating surface for a private desktop workflow. Graphite layers hold the work in a low-light chat setting while sea-glass actions distinguish the few moments that need a decision: select a tone, generate, then copy a reply.",
+    "keyCharacteristics": ["Restrained dark tonal layering rather than floating-card depth.", "One sea-glass action color, with warm warning and error exceptions.", "Dense, desktop-native controls with explicit enabled, disabled, and selected states."],
+    "rules": [
+      {"name": "The One Action Color Rule", "body": "Sea-glass is for a selected state or an action that advances the workflow, never for decorative emphasis.", "section": "colors"},
+      {"name": "The Read-Then-Act Rule", "body": "The incoming message remains the first large body region; controls follow it in task order.", "section": "typography"},
+      {"name": "The Tonal Layer Rule", "body": "Use a surface change to communicate hierarchy or interaction state. Do not add decorative glow, gradients, or floating shadows.", "section": "elevation"}
+    ],
+    "dos": ["Do use the primary action color only for the selected relationship and the next task action.", "Do reset reply choices whenever their relationship or generation context is no longer current.", "Do keep chat text and candidate actions visually distinct through hierarchy and labeling.", "Do keep manual copy and manual message sending as separate user-controlled steps."],
+    "donts": ["Don't turn the panel into a terminal transcript or a dashboard.", "Don't add gradients, glass effects, decorative shadows, or extra color accents.", "Don't leave stale candidates enabled while a new generation is pending.", "Don't make screenshots or API keys persistent by default."]
+  }
+}

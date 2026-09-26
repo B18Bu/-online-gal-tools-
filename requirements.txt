@@ -1,0 +1,6 @@
+PyInstaller
+keyboard
+numpy
+pyautogui
+pyperclip
+rapidocr-onnxruntime
